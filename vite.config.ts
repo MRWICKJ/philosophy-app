@@ -11,7 +11,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  
+  preview: {
+    allowedHosts: ["philosophy-app.onrender.com"], // Allow your Render host
+  },
 })
-
-

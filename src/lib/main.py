@@ -1,8 +1,8 @@
 import json
 import requests
-import time  # To add a slight delay between API requests
+import time
 
-API_KEY = "ujHgopWBfSqxuX2sVOe2dFt6GAVVFbwfOWnwYyDHVROBICQAH82XtlRy"
+API_KEY = ""
 API_URL = "https://api.pexels.com/v1/search?query={query}&per_page=1"
 HEADERS = {"Authorization": API_KEY}
 
@@ -28,18 +28,17 @@ def update_image_urls(data):
             else:
                 print(f"Failed to fetch image for {topic}")
             
-            time.sleep(1)  # Add a delay to avoid API rate limits
+            time.sleep(1)
 
     return data
 
-# Load JSON data from file
+
 with open("c:/Users/halde/OneDrive/Desktop/Recent/philosophy-app/src/lib/data.json", "r") as file:
     json_data = json.load(file)
 
-# Update JSON with relevant images
 updated_data = update_image_urls(json_data)
 
-# Save updated JSON data back to file
+
 with open("c:/Users/halde/OneDrive/Desktop/Recent/philosophy-app/src/lib/data.json", "w") as file:
     json.dump(updated_data, file, indent=2)
 

@@ -1,13 +1,9 @@
 import { Link } from "react-router-dom";
 import { philosophicalTopics } from "../lib/data";
 import { Card, CardHeader, CardTitle, CardContent } from "../components/ui/card";
-import { MainNav } from "../pages/MainNav";
-import Footer from "./Footer";
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-zinc-900 to-zinc-800 text-white">
-      <MainNav />
       <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 max-w-7xl mx-auto">
         {philosophicalTopics.map((category, index) => (
           <Link to={`/category/${index}`} key={category.category}>
@@ -29,7 +25,7 @@ export default function Home() {
           </Link>
         ))}
       </main>
-      <Footer />
+      
     </div>
   );
 }
